@@ -22,9 +22,9 @@ Indo além, criamos uma interface moderna com React e Vite. Também desenvolvemo
 ## Parte 1
 Criei uma solução que utiliza Edge Computing com ESP32 para monitoramento em aplicações críticas de saúde. O sistema coleta dados localmente através de sensores e continua funcionando mesmo sem conexão com a internet.
 
-**Link do projeto non Wokwi: https://wokwi.com/projects/463496096459659265**
+**Link do projeto no Wokwi: https://wokwi.com/projects/463496096459659265**
 
-**Relatório com mais detalhes dentro da pasta Parte1**
+**Relatório com mais detalhes dentro da pasta "Parte1"**
 
 <img src="assets/Parte1_wokwi.png" widht="150">
 
@@ -39,6 +39,8 @@ O ESP32 realiza leituras periódicas dos sensores e armazena os dados localmente
 
 Quando o sistema está offline:
 -	os dados continuam sendo armazenados localmente 
+
+
 Quando a conexão retorna:
 -	os dados armazenados são enviados para a “nuvem” utilizando o Monitor Serial 
 - 	após o envio, os dados locais são apagados 
@@ -50,7 +52,7 @@ Quando a conexão retorna:
 
 Foi implementada uma estratégia FIFO com capacidade máxima de 10 registros. Quando o armazenamento atinge o limite, os dados mais antigos são removidos automaticamente.
 Essa abordagem garante:
--   continuidade operacional 
+- continuidade operacional 
 -	tolerância à falha de rede 
 -	baixo consumo de memória
 
@@ -64,7 +66,7 @@ Na segunda parte desenvolvi e implementei um sistema completo de monitoramento, 
 
 **Link do vídeo: https://youtu.be/qpGmhhiO1mw**
 
-**Relatório com mais detalhes dentro da pasta Parte1**
+**Relatório com mais detalhes dentro da pasta "Parte2"**
 
 <img src="assets/wokwi.png" widht="150">
 
@@ -130,7 +132,7 @@ Os alertas são ativados quando:
 Para o Ir Além implementei um sistema de monitoramento de sinais vitais utilizando comunicação REST em Python.
 O sistema simula sensores médicos enviando dados para uma API REST responsável pela análise dos sinais e detecção de riscos.
 
-**Relatório com mais detalhes dentro da pasta Ir_Alem1**
+**Relatório com mais detalhes dentro da pasta "Ir_Alem1"**
 
 ### Fluxo da solução
 
@@ -183,6 +185,8 @@ O sistema envia alertas automaticamente para profissionais responsáveis.
 No Ir Além 2 realizei o treinamento de dois modelos. O objetivo é comparar técnicas tradicionais de aprendizado de máquina com modelos neuromórficos aplicados à análise de séries temporais de sinais vitais.
 
 **Relatório com mais detalhes dentro da pasta Ir_Alem2**
+
+
 **Link do vídeo: https://youtu.be/rRensd7oCjk**
 
 Foi utilizada uma base sintética de batimentos cardíacos para classificação entre estados normais e taquicardia.
@@ -212,6 +216,8 @@ O projeto demonstra como modelos neuromórficos podem ser aplicados em séries t
 # 📁 Estrutura de pastas
 
 Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
+
+- <b>Ir_Alem1</b>: Interface e todo código React + Vite.
 
 - <b>assets</b>: Imagens relevantes para documentação desse repositório.
 
