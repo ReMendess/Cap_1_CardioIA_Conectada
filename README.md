@@ -14,7 +14,7 @@
 
 # Descrição
 Nessa terceira fase, com foco em Edge, Fog e Cloud Computing, desenvolvi e implementei aplicações que capturam dados em tempo real de sensores, armazenam e se conectam com a nuvem.
-Na segunda parte principalmente, foi construida uma solução de monitoramento até a visualização de dados, voltado para a área da saúde. Abrangendo todo as fases, ferramentas e camadas de IOT conectada a nuvem.
+Na segunda parte principalmente, foi construida uma solução de monitoramento até a visualização de dados, voltado para a área da saúde. Abrangendo todas as fases, ferramentas e camadas de IOT conectada a nuvem.
 Indo além, criei uma solução em python, com API REST e o protocolo SMTP, conectado ao Gmail para envio de alertas.
 No segundo indo além, em um notebook python treinei dois modelos, um de regrssão logística e um LIF (Leaky Integrate-and-Fire), sendo o segundo um modelo baseado em uma arquitetura neuromórfica.
 Fiz um ajuste e análise comparativa de ambos os modelos.
