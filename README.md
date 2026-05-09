@@ -217,33 +217,28 @@ O projeto demonstra como modelos neuromórficos podem ser aplicados em séries t
 
 Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
-- <b>Ir_Alem1</b>: Interface e todo código React + Vite.
+- <b>Ir_Alem1</b>: Códigos do sistema de monmitoramento API REST com Python e relatório descritivo.
+
+- <b>Ir_Alem_2</b>: Notebook python com o treinamento do modelo de Regressão e LIF, e relatório descritivo.
+
+- <b>Parte1</b>: Código C do ESP32 que coleta dados localmente e relatório descritivo.
+  
+- <b>Parte2</b>: Código C do ESP32 que se conecta via MQTT ao broker e relatório descritivo.
 
 - <b>assets</b>: Imagens relevantes para documentação desse repositório.
 
-- <b>Parte_1</b>: Arquivo txt, csv e código Python referentes ao classificador NPL baseado em regras e mapa ontologico criado.
-
-- <b>Parte_2</b>: Arquivo csv e programa Python classificador NPL probabilistico, usando TF_IDF.
-
-- <b>Ir_Alem</b>: Interface e todo código React + Vite.
-
-- <b>Ir_Alem_2</b>: Notebook python com o modelo MLP para visão computacional.
-  
 
   
 ## Requisitos
-#### Ambiente
+
 - Node.js 20.x ou 22.x LTS (recomendado para Vite 8) + npm
 - Python 3.10–3.12 
-- Portal web: Node 20/22, React 19, Vite 8, React Router 7. 
-- Notebook: Python 3.10–12, pip install -r requirements.txt (pandas, scikit-learn, numpy, JupyterLab).
-
-#### Versões 
-- react 19.2.4
-- react-dom 19.2.4
-- react-router-dom 7.13.2
-- pandas 2.1
-- scikit-learn 1.4
-- numpy 1.26
-- jupyterlab 4 
+- Arduino IDE ou Wokwi
+- Node-RED
+- Conta no HiveMQ Cloud
+- Notebook: Python 3.10–12
+- Node-red-dashboard
+- Flask
+- Requests
+- SMTP
 
