@@ -19,9 +19,11 @@ Indo além, criamos uma interface moderna com React e Vite. Também desenvolvemo
 
 
 
-### Parte 1
+## Parte 1
 Criei uma solução que utiliza Edge Computing com ESP32 para monitoramento em aplicações críticas de saúde. O sistema coleta dados localmente através de sensores e continua funcionando mesmo sem conexão com a internet.
+
 **Link do projeto non Wokwi: https://wokwi.com/projects/463496096459659265**
+
 **Relatório com mais detalhes dentro da pasta Parte1**
 
 <img src="assets/Parte1_wokwi.png" widht="150">
@@ -55,11 +57,13 @@ Essa abordagem garante:
 <img src="assets/Parte1_wokwiII.png" widht="150">
 
 
-### Parte 2
+## Parte 2
 Na segunda parte desenvolvi e implementei um sistema completo de monitoramento, distribuição e visualização de dados, usando MQTT, HiveMQ e Node-RED.
 
 **Link do projeto non Wokwi: https://wokwi.com/projects/463502084128323585**
+
 **Link do vídeo: https://youtu.be/qpGmhhiO1mw**
+
 **Relatório com mais detalhes dentro da pasta Parte1**
 
 <img src="assets/wokwi.png" widht="150">
@@ -113,13 +117,18 @@ Os alertas são ativados quando:
 - temperatura > 38°C
 
 ##### Conceitos aplicados
-Edge Computing; Coleta local no ESP32; Fog Computing; Processamento intermediário no Node-RED; Cloud Computing e Broker MQTT HiveMQ Cloud.
+1. Edge Computing; 
+2. Coleta local no ESP32;
+3. Fog Computing;
+4. Processamento intermediário no Node-RED;
+5. Cloud Computing
+6. Broker MQTT HiveMQ Cloud.
 
-<img src="assets/Parte1_wokwiII.png" widht="150">
+
+## Ir Além
 
 
-
-### Ir Além 2
+## Ir Além 2
 
 # 📁 Estrutura de pastas
 
