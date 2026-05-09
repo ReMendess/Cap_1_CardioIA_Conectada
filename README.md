@@ -6,100 +6,117 @@
 
 <br>
 
-# Cap 1 - Desafio Integrador: IA entre Robôs, Sinapses e Medicina
+# Cap 1 - CardioIA Conectada: IoT e Visualização de Dados para a Saúde Digital
 
-## Nome do grupo
-
-# Integrantes: 
+# Integrante: 
 - <a href="https://www.linkedin.com/in/renanmendes26/">Renan de Oliveira Mendes - RM563145</a>
-- <a href="https://www.linkedin.com/in/ricaleone/">Ricardo Batah Leone - RM563382</a>
-- <a href="https://www.linkedin.com/in/yuki-watanabe-kuramoto-858856146/">Yuki Watanabe Kuramoto  - RM565164</a>
-- <a href="https://br.linkedin.com/in/rodrigoreinaux/">Rodrigo De Melo Reinaux Porto  - RM564242</a>
 
 
 # Descrição
-Nessa segunda fase desenvolvendo ferramentas que automatizam a triagem e o diagnóstico médico por meio de Processamento de Linguagem Natural (NLP) e Machine Learning. Utilizamos duas técnicas em NLP, baseado em regras e estatístico.
+Nessa fase, desenvolvi.
 
 Indo além, criamos uma interface moderna com React e Vite. Também desenvolvemos e treinamos um modelo de visão computacional para a análise de exames de eletrocardiograma.
 
-# Links Videos:
-### Parte 1 e Parte 2: https://youtu.be/x02ARFNEPwI
-### Ir Além: https://youtu.be/Ef4Oz--yt_8
 
 
 ### Parte 1
-Implementamos um sistema de extração de informações para interpretar relatos clínicos.
+Criei uma solução que utiliza Edge Computing com ESP32 para monitoramento em aplicações críticas de saúde. O sistema coleta dados localmente através de sensores e continua funcionando mesmo sem conexão com a internet.
+**Link do projeto non Wokwi: https://wokwi.com/projects/463496096459659265**
+**Relatório com mais detalhes dentro da pasta Parte1**
 
-Através de buscas por palavras-chave e expressões comuns (ex: "aperto no tórax", "fadiga"), o algoritmo sugere diagnósticos preliminares como Infarto ou Insuficiência Cardíaca, simulando o apoio à decisão médica.
+<img src="assets/Parte1_wokwi.png" widht="150">
 
-#### Como funciona:
+##### Sensores utilizados
 
-O código em python "Criar_Dados.py" cria uma base de dados simulado em CSV "mapa_sintomas_doencas.csv", seguindo uma estrutura de colunas, onde foram registrados dois sintomas, intensidade, duração e uma doença sugerida.
+ - Sensor DHT22 para temperatura e umidade 
+ - Sensor LDR para luminosidade 
 
- O sistema lê o arquivo csv criado "mapa_sintomas_doecas.csv" que tem os sintomas e utiliza uma estrutura de mapeamento para identificar padrões semânticos, criando um mapa de palavras e relacionamento entre elas.
- 
- <img src="assets/criar_dados.png" widht="150">
-
-
- Como visto em aula, essa estratégia é baseada em regras, utilizando análises léxica, morfológica e sintática para compreender o texto.
-
-
-O programa "Identificar_sintomas.py" utiliza o arquivo "sintomas_pacientes.txt" como entrada nova. Pega o arquivo csv e faz uma comparação e classificação. Conforme encontra palavras e frases semelhantes, ele realiza um diagnóstico para o paciente.
-
-<img src="assets/arquivo_txt.png" widht="150">
+#### Funcionamento
+O ESP32 realiza leituras periódicas dos sensores e armazena os dados localmente em memória. Uma variável booleana simula a conectividade Wi-Fi.
 
 
-<img src="assets/identificar_sintomas.png" widht="150">
+Quando o sistema está offline:
+-	os dados continuam sendo armazenados localmente 
+Quando a conexão retorna:
+-	os dados armazenados são enviados para a “nuvem” utilizando o Monitor Serial 
+- 	após o envio, os dados locais são apagados 
 
-Por fim criamos um programa "Visualizar_Ontologia" para visualizar a ontologia criada de forma visual e gráfica, permitindo entender a lógica de decisão do modelo de NLP baseado em regras.
 
-<img src="assets/Mapa_Ontologia.png" widht="150">
+
+##### Resiliência Offline
+
+
+Foi implementada uma estratégia FIFO com capacidade máxima de 10 registros. Quando o armazenamento atinge o limite, os dados mais antigos são removidos automaticamente.
+Essa abordagem garante:
+-   continuidade operacional 
+-	tolerância à falha de rede 
+-	baixo consumo de memória
+
+<img src="assets/Parte1_wokwiII.png" widht="150">
+
 
 ### Parte 2
+Na segunda parte desenvolvi e implementei um sistema completo de monitoramento, distribuição e visualização de dados, usando MQTT, HiveMQ e Node-RED.
 
-Agora utilizando processamento de texto com TF-IDF (Term Frequency-Inverse Document Frequency) para converter relatos médicos em vetores numéricos. Seguindo uma abordagem mais tradicional, voltada a estatistica e probabilidade, treinamos um algoritmo de Machine Learning (Scikit-learn) para classificar os pacientes entre "Baixo Risco" e "Alto Risco", permitindo uma triagem rápida e eficiente baseada na gravidade dos sintomas.
+**Link do projeto non Wokwi: https://wokwi.com/projects/463502084128323585**
+**Link do vídeo: https://youtu.be/qpGmhhiO1mw**
+**Relatório com mais detalhes dentro da pasta Parte1**
 
-#### Como funciona:
+<img src="assets/wokwi.png" widht="150">
 
-Criamos outro programa python "Gerar_Dataset.py" para gerar um novo arquivo csv "frases_risco.csv". Esse novo dataset é necessário pois descreve de forma mais textual e natural do que o dataset usado na parte 1.
 
-<img src="assets/gerar_dataset.png" widht="150">
+O projeto implementa uma arquitetura IoT utilizando Edge, Fog e Cloud Computing para monitoramento de sinais vitais em tempo real.
 
-Em seguida no notebook python "Classificador_TF_IDF.ipynb" vetorizamos o texto (arquivo csv) com TF-IDF e treinamos dois modelos diferentes. Um de Regressão Logística e uma Árvore de Decisão.
+O ESP32 realiza coleta de dados locais e transmite informações via protocolo MQTT para um broker em nuvem.
 
-<img src="assets/modelos.png" widht="150">
+##### Tecnologias utilizadas
+- ESP32
+- Wokwi
+- MQTT
+- HiveMQ Cloud
+- Node-RED
+- Dashboard IoT
+- Fluxo MQTT
 
-Seguimos então para a avalição dos modelos, obtivemos bons resultados do modelo de regressão logística com uma acurácia de 83% apesar da pequena quantidade de dados e sem realizar uma hiper-parametrização. Por outro lado o modelo de árvore de decisão teve uma acurácia de apenas 63% não conseguindo classificar com sucesso os diagnósticos.
+O ESP32 conecta-se ao Wi-Fi e estabelece comunicação MQTT com o broker HiveMQ Cloud.
 
-<img src="assets/avaliacao_modelos.png" widht="150">
+<img src="assets/wokwi.png" widht="150">
 
-Usando o melhor modelo, de regressão logística, testamos com 4 novas frases o classificador de diagnósticos.
-O resultado foi coerente, classificando as frases de "Alto Risco" de forma acertiva.
+<img src="assets/HiveMQ.png" widht="150">
 
-<img src="assets/teste_modelo_Logis_Regre.png" widht="150">
+Os dados são publicados nos tópicos:
 
-### Ir Além
+- hospital/temperatura
+- hospital/bpm
 
-Criamos do zero uma interface web completa responsiva para a gestão da clínica cardiológica.
-Utilizamos: React + Vite + Styled Components/CSS Modules.
+<img src="assets/NODE_RED.png" widht="150">
 
-<img src="assets/Login.png" widht="150">
+O Node-RED atua como camada Fog Computing:
 
-Dentre as Funcionalidades: 
-- Gerenciamento de estado global com Context API.
-- Autenticação simulada com persistência via LocalStorage.
-- Consumo de dados via API fake para listagem de pacientes.
-- Dashboards dinâmicos com métricas de agendamento e saúde.
+- recebe dados
+- processa alertas
+- atualiza dashboard em tempo real
 
-Usando Context e diversos hooks e componentes, criamos 4 paginas
+##### Dashboard
 
-<img src="assets/pages.png" widht="150">
-<img src="assets/AuthContext.png" widht="150">
+A dashboard apresenta:
 
-De forma dinamica e simulada é possível realizar um login com autenticação, ver a lista de pacientes e marcar uma consulta.
+- gráfico de BPM
+- gauge de temperatura
+- alertas críticos
 
-<img src="assets/Portal.png" widht="150">
-<img src="assets/agendamento.png" widht="150">
+<img src="assets/Dashboard.png" widht="150">
+
+Os alertas são ativados quando:
+
+- BPM > 120
+- temperatura > 38°C
+
+##### Conceitos aplicados
+Edge Computing; Coleta local no ESP32; Fog Computing; Processamento intermediário no Node-RED; Cloud Computing e Broker MQTT HiveMQ Cloud.
+
+<img src="assets/Parte1_wokwiII.png" widht="150">
+
 
 
 ### Ir Além 2
